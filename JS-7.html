@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-7</title>
+    <script type="text/javascript">
+        var img = null;
+        var animationInterval = null;
+
+        function init() {
+            img = document.getElementById('myimg');
+            img.style.position = 'relative';
+            img.style.left = '50px';
+        }
+
+        function moveRight() {
+            if (animationInterval === null) {
+                animationInterval = setInterval(function () {
+                    img.style.left = parseInt(img.style.left) + 1 + 'px';
+                }, 10);
+            }
+        }
+
+        function stop() {
+            clearInterval(animationInterval);
+            animationInterval = null;
+        }
+
+        window.onload = init;
+    </script>
+</head>
+
+<body>
+    <form>
+        <img id="myimg" src="train.png" width="200px" />
+        <center>
+            <h2 style="color:rgb(118, 2, 118);">Click the following buttons to handle animation</h2>
+            <input type="button" value="Start" onclick="moveRight();" />
+            <input type="button" value="Stop" onclick="stop();" />
+        </center>
+    </form>
+</body>
+
+</html>

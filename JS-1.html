@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-1</title>
+    <style>
+        .border-box {
+            border: 1px solid black;
+            padding: 10px;
+            width: 400px;
+            margin-top: 100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <script>
+        function reverse() {
+            var input = Number(document.myform.num.value);
+            var sum = 0;
+            while (input > 0) {
+                sum = sum * 10 + input % 10;
+                input = Math.floor(input / 10);
+            }
+            document.getElementById("result").innerHTML = sum;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="border-box">
+        <form name="myform">
+            Enter a number: <input type="text" name="num"><br><br>
+            <input type="button" onclick="reverse()" value="Click">
+        </form>
+        <p id="result"></p>
+    </div>
+
+</body>
+
+</html>
